@@ -1,0 +1,18 @@
+spring:
+  thymeleaf:
+    mode: HTML
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://101.200.83.177:3310/db_mblog?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+#log springboot 默认logback ,按照10M做切分的。可以按照自己要求做配置
+logging:
+  file:
+    path: logs
+    name: logs/blog-dev.log
+

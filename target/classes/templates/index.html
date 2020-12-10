@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="_fragments::head(~{::title})">
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+    <nav class="ui inverted attached segment index-padding-mini m-shadow-small">
+        <div class="ui container">
+            <div class="ui inverted stackable menu">
+                <h2 class="ui teal header item">Blog</h2>
+                <a href="#" class="m-item item m-mobile-hide"><i class="home icon"></i>首页</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="idea icon"></i>分类</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="tags icon"></i>标签</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="clone icon"></i>归档</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="info icon"></i>关于我</a>
+                <div class="right item">
+                    <div class="ui icon input">
+                        <input type="text" placeholder="Search....."/>
+                        <i class="search link icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="ui menu_toggle black icon button index-top-right m-mobile-show" style="margin: 22px;">
+            <i class="sidebar icon"></i>
+        </a>
+    </nav>
+    <div class="index-padding-large">
+        <!--container 响应式效果-->
+        <div class="ui container">
+            <!--整个内容 左边11 右边5-->
+            <div class="ui stackable grid">
+                <!--左边内容-->
+                <div class="eleven wide column">
+                    <!-- context header -->
+                    <div class="ui top attached segment">
+                        <div class="ui middle aligned two column grid">
+                            <div class="column">
+                                <h3 class="ui teal header">博客</h3>
+                            </div>
+                            <div class="right aligned column">
+                                共 <h3 class="ui orange header m-inline-block m-text-thin">14</h3> 篇
+                            </div>
+                        </div>
+                    </div>
+                    <!--context body-->
+                    <div class="ui attached segment">
+                        <div class="ui padded vertical segment">
+                            <div class="ui stackable grid">
+                                <!--左边文章内容-->
+                                <div class="eleven wide column">
+                                    <h3 class="ui header">你真的理解什么是财富自由吗？</h3>
+                                    <p class="m-text-lined m-text-spaced">你真的理解什么是财富自由吗？你真的理解什么是财富自由吗？你真的理解什么是财富自由吗？你真的理解什么是财富自由吗？
+                                        你真的理解什么是财富自由吗？......</p>
+                                    <div class="ui stackable grid">
+                                        <div class="eleven wide column">
+                                           <div class="ui horizontal link list">
+                                               <div class="item">
+                                                   <img src="https://picsum.photos/id/1005/100/100" alt="" class="ui avatar image">
+                                                   <div class="content">
+                                                       <a href="#" class="header">程序员</a>
+                                                   </div>
+                                               </div>
+                                               <div class="item">
+                                                   <i class="calendar icon"></i>2017-10-1
+                                               </div>
+                                               <div class="item">
+                                                   <i class="eye icon"></i>100
+                                               </div>
+                                           </div>
+                                        </div>
+                                        <div class="right aligned five wide column">
+                                            <a href="#" target="_blank" class="ui teal basic label">认知升级</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--右边图片-->
+                                <div class="five wide column">
+                                    <a href="" target="_blank">
+                                        <img  src="https://picsum.photos/id/1/800/400" class="ui rounded image" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui attached segment">
+                        <div class="ui padded vertical segment">
+                            <div class="ui stackable grid">
+                                <!--左边文章内容-->
+                                <div class="eleven wide column">
+                                    <h3 class="ui header">你真的理解什么是财富自由吗？</h3>
+                                    <p>你真的理解什么是财富自由吗？你真的理解什么是财富自由吗？你真的理解什么是财富自由吗？你真的理解什么是财富自由吗？
+                                        你真的理解什么是财富自由吗？......</p>
+                                    <div class="ui grid">
+                                        <div class="eleven wide column">
+                                            <div class="ui horizontal link list">
+                                                <div class="item">
+                                                    <img src="https://picsum.photos/id/1005/100/100" alt="" class="ui avatar image">
+                                                    <div class="content">
+                                                        <a href="#" class="header">程序员</a>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <i class="calendar icon"></i>2017-10-1
+                                                </div>
+                                                <div class="item">
+                                                    <i class="eye icon"></i>100
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="right aligned five wide column">
+                                            <a href="#" target="_blank" class="ui teal basic label">认知升级</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--右边图片-->
+                                <div class="five wide column">
+                                    <a href="" target="_blank">
+                                        <img  src="https://picsum.photos/id/1/800/400" class="ui rounded image" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui attached segment">
+                        <div class="ui padded vertical segment">
+                            <div class="ui stackable grid">
+                                <!--左边文章内容-->
+                                <div class="eleven wide column">
+                                    <h3 class="ui header">你真的理解什么是财富自由吗？</h3>
+                                    <p>你真的理解什么是财富自由吗？你真的理解什么是财富自由吗？你真的理解什么是财富自由吗？你真的理解什么是财富自由吗？
+                                        你真的理解什么是财富自由吗？......</p>
+                                    <div class="ui grid">
+                                        <div class="eleven wide column">
+                                            <div class="ui horizontal link list">
+                                                <div class="item">
+                                                    <img src="https://picsum.photos/id/1005/100/100" alt="" class="ui avatar image">
+                                                    <div class="content">
+                                                        <a href="#" class="header">程序员</a>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <i class="calendar icon"></i>2017-10-1
+                                                </div>
+                                                <div class="item">
+                                                    <i class="eye icon"></i>100
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="right aligned five wide column">
+                                            <a href="#" target="_blank" class="ui teal basic label">认知升级</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--右边图片-->
+                                <div class="five wide column">
+                                    <a href="" target="_blank">
+                                        <img  src="https://picsum.photos/id/1/800/400" class="ui rounded image" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui attached segment">
+                        <div class="ui padded vertical segment">
+                            <div class="ui mobile reversed stackable grid">
+                                <!--左边文章内容-->
+                                <div class="eleven wide column">
+                                    <h3 class="ui header">你真的理解什么是财富自由吗？</h3>
+                                    <p>你真的理解什么是财富自由吗？你真的理解什么是财富自由吗？你真的理解什么是财富自由吗？你真的理解什么是财富自由吗？
+                                        你真的理解什么是财富自由吗？......</p>
+                                    <div class="ui grid">
+                                        <div class="eleven wide column">
+                                            <div class="ui horizontal link list">
+                                                <div class="item">
+                                                    <img src="https://picsum.photos/id/1005/100/100" alt="" class="ui avatar image">
+                                                    <div class="content">
+                                                        <a href="#" class="header">程序员</a>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <i class="calendar icon"></i>2017-10-1
+                                                </div>
+                                                <div class="item">
+                                                    <i class="eye icon"></i>100
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="right aligned five wide column">
+                                            <a href="#" target="_blank" class="ui teal basic label">认知升级</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--右边图片-->
+                                <div class="five wide column">
+                                    <a href="" target="_blank">
+                                        <img  src="https://picsum.photos/id/1/800/400" class="ui rounded image" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!--context foot 上一页 下一页-->
+                    <div class="ui bottom attached segment">
+                        <div class="ui middle aligned two column grid">
+                            <div class="column">
+                                <a class="ui mini teal basic button">上一页</a>
+                            </div>
+                            <div class="right aligned column">
+                                <a class="ui mini teal basic button">下一页</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 右边内容-->
+                <div class="five wide column">
+                    <!--右边的分类-->
+                    <div class="ui segments">
+                        <div class="ui secondary segment">
+                            <div class="ui two column grid">
+                                <div class="column">
+                                    <i class="idea icon"></i>分类
+                                </div>
+                                <div class="right aligned column">
+                                    <a herf="#" target="_blank">more <i class="angle double right icon"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui teal segment">
+                            <div class="ui fluid vertical menu">
+                                <a class="item" href="#">学习日志
+                                    <div class="ui teal basic left pointing label ">13</div>
+                                </a>
+                                <a class="item" href="#">学习日志
+                                    <div class="ui teal basic left pointing label ">13</div>
+                                </a>
+                                <a class="item" href="#">学习日志
+                                    <div class="ui teal basic left pointing label ">13</div>
+                                </a>
+                                <a class="item" href="#">学习日志
+                                    <div class="ui teal basic left pointing label ">13</div>
+                                </a>
+                                <a class="item" href="#">学习日志
+                                    <div class="ui teal basic left pointing label ">13</div>
+                                </a>
+                                <a class="item" href="#">学习日志
+                                    <div class="ui teal basic left pointing label ">13</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--右边的标签-->
+                    <div class="ui segments index-margin-top-large">
+                        <div class="ui secondary segment">
+                            <div class="ui two column grid">
+                                <div class="column">
+                                    <i class="tags icon"></i>标签
+                                </div>
+                                <div class="right aligned column">
+                                    <a herf="#" target="_blank">more <i class="angle double right icon"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui teal segment">
+                            <a class="ui teal basic label index-margin-tb-tiny" href="#">springBoot<div class="detail">23</div></a>
+                            <a class="ui teal basic label index-margin-tb-tiny" href="#">springBoot<div class="detail">23</div></a>
+                            <a class="ui teal basic label index-margin-tb-tiny" href="#">springBoot<div class="detail">23</div></a>
+                        </div>
+                    </div>
+                    <!--右边的推荐-->
+                    <div class="ui segments index-margin-top-large">
+                        <div class="ui secondary segment">
+                            <i class="bookmark icon"></i>最新推荐
+                        </div>
+                        <div class="ui segment ">
+                            <a href="#" target="_blank" class="m-black m-text-thin">用户故事（User store）</a>
+                        </div>
+                        <div class="ui segment">
+                            <a href="#" target="_blank" class="m-black m-text-thin">用户故事（User store）</a>
+                        </div>
+                        <div class="ui segment">
+                            <a href="#" target="_blank" class="m-black m-text-thin">用户故事（User store）</a>
+                        </div>
+                        <div class="ui segment">
+                            <a href="#" target="_blank" class="m-black m-text-thin">用户故事（User store）</a>
+                        </div>
+
+                    </div>
+                    <!--二维码-->
+                    <h4 class="ui horizontal divider header">扫码关注我</h4>
+                    <div class="ui centered card">
+                        <img src="../static/images/weixinPot.png" th:src="@{/images/weixinPot.png}" class="ui rounded image" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="ui inverted vertical segment index-padding-max">
+        <div class="ui center aligned container">
+            <!--grid 分成16份 布局 3/3/3/7-->
+            <div class="ui inverted divided stackable grid">
+                <div class="three wide column">
+                    <div class="ui inverted link list">
+                        <div class="item">
+                            <img src="../static/images/weixinPot.png" th:src="@{/images/weixinPot.png}"  class="ui rounded image" style="width: 110px">
+                        </div>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header  m-text-spaced m-opacity-mini">最新博客</h4>
+                    <!--list 竖着的列表组件-->
+                    <div class="ui inverted link list">
+                        <a class="item">spring学习路线</a>
+                        <a class="item">spring学习路线</a>
+                        <a class="item">spring学习路线</a>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header  m-text-spaced m-opacity-mini">联系我</h4>
+                    <!--list 竖着的列表组件-->
+                    <div class="ui inverted link list">
+                        <a class="item">Email： sj09267@163.com</a>
+                        <a class="item">QQ: 460703017</a>
+                    </div>
+                </div>
+                <div class="seven wide column">
+                    <h4 class="ui inverted header m-text-spaced m-opacity-mini">博客介绍</h4>
+                    <p class="m-text-spaced m-text-thin m-text-lined">spring学习路线spring学习路线spring学习路线spring学习路线spring学习路线spring学习路线spring学习路线spring学习路线</p>
+                </div>
+            </div>
+            <div class="ui inverted section divider">
+            </div>
+            <P class="ui inverted m-text-spaced m-text-thin m-text-lined m-opacity-mini">©wycode.cn 2015-2020 All Right Reserved</P>
+        </div>
+    </footer>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<script>
+    $('.menu_toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+</script>
+</body>
+</html>
