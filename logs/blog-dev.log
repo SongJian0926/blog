@@ -7499,7 +7499,3 @@ Identify and stop the process that's listening on port 8083 or configure this ap
 2020-12-10 16:50:21.893  INFO 4992 --- [http-nio-8083-exec-8] com.hsbc.blog.aspects.LogAspect          : Request : {url='http://localhost:8083/', ip='0:0:0:0:0:0:0:1', classMethod='com.hsbc.blog.controller.webTestController.get', args=[]}
 2020-12-10 16:50:21.893  INFO 4992 --- [http-nio-8083-exec-8] com.hsbc.blog.aspects.LogAspect          : Response { ModelAndView [view="index"; model=null] }
 2020-12-10 16:50:21.893  INFO 4992 --- [http-nio-8083-exec-8] com.hsbc.blog.aspects.LogAspect          : ***************doAfter**********************
-2020-12-10 17:41:50.424  INFO 4992 --- [Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-12-10 17:41:50.444  INFO 4992 --- [Thread-11] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-12-10 17:41:50.446  INFO 4992 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-12-10 17:41:50.451  INFO 4992 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
