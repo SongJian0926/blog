@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <head th:replace="admin/_admin_fragments::head(~{::title})">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--th:replace="_fragments::menu(1)"-->
+<nav th:replace="admin/_admin_fragments::menu(0)" ></nav>
+
+<div class="m-container-small index-padding-tb-max">
+    <div class="ui container">
+        <div class="ui success large message index-margin-top-large">
+            <h1>hi</h1>
+            <p>xxx,欢迎登录！</p>
+        </div>
+        <img src="https://picsum.photos/id/1/600/300" alt="" class="ui rounded bordered fluid image index-margin-top-small">
+    </div>
+</div>
+
+<!--th:replace="_fragments::footer"-->
+<footer th:replace="admin/_admin_fragments::footer"></footer>
+
+<!--/*/<th:block th:replace="admin/_admin_fragments :: script">/*/-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<!--/*/</th:block>/*/-->
+</body>
+</html>
