@@ -10,10 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -41,7 +38,7 @@ public class BlogController {
     * 进入列表页面
     * */
     @GetMapping("/blogs")
-    public ModelAndView blogs(@PageableDefault(size=2,sort = {"updateTime"},direction = Sort.Direction.DESC)
+    public ModelAndView blogs(@PageableDefault(size=10,sort = {"updateTime"},direction = Sort.Direction.DESC)
                                           Pageable pageable, BlogQuery blog, Model model){
         model.addAttribute("page",blogService.listBlog(pageable,blog));
         model.addAttribute("types",typeService.listType());
@@ -50,7 +47,7 @@ public class BlogController {
     }
 
    @PostMapping("/blogs/search")
-   public ModelAndView search(@PageableDefault(size=2,sort = {"updateTime"},direction = Sort.Direction.DESC) Pageable pageable, BlogQuery blog, Model model){
+   public ModelAndView search(@PageableDefault(size=10,sort = {"updateTime"},direction = Sort.Direction.DESC) Pageable pageable, BlogQuery blog, Model model){
        model.addAttribute("page",blogService.listBlog(pageable,blog));
        ModelAndView modelAndView = new ModelAndView("admin/blogs :: blogList");
        return modelAndView;
@@ -59,11 +56,31 @@ public class BlogController {
    @GetMapping("/blogs/input")
    public ModelAndView input(Model model){
        model.addAttribute("blog",new Blog());
-       model.addAttribute("types",typeService.listType());
-       model.addAttribute("tags",tagService.listTage());
+       setTypeAndTag(model);
        ModelAndView modelAndView = new ModelAndView(INPUT);
        return modelAndView;
    }
+    private void setTypeAndTag(Model model){
+        model.addAttribute("types",typeService.listType());
+        model.addAttribute("tags",tagService.listTage());
+    }
+    @GetMapping("/blogs/{id}/input")
+    public ModelAndView editInput(@PathVariable Long id, Model model){
+        Blog blog = blogService.getBlog(id);
+        blog.init();
+        model.addAttribute("blog",blog);
+        setTypeAndTag(model);
+        ModelAndView modelAndView = new ModelAndView(INPUT);
+        return modelAndView;
+    }
+
+    @GetMapping("/blogs/{id}/delete")
+    public ModelAndView delete(@PathVariable Long id,RedirectAttributes attributes){
+        blogService.deleteBlog(id);
+        ModelAndView modelAndView = new ModelAndView(REDIRECT_LIST);
+        attributes.addFlashAttribute("message","恭喜，删除成功");
+        return modelAndView;
+    }
 
    @PostMapping("/blogs")
     public ModelAndView post(Blog blog, HttpSession session, RedirectAttributes attributes){

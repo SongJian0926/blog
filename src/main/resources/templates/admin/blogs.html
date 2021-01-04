@@ -30,7 +30,7 @@
                 </div>
                 <div class="ui field">
                     <div content="ui labeled action input">
-                        <div class="ui selection dropdown">
+                        <div id="type" class="ui selection dropdown">
                             <input type="hidden" name="typeId">
                             <i class="dropdown icon"></i>
                             <div class="default text">分类</div>
@@ -75,11 +75,11 @@
                     <td th:text="${blog.title}"></td>
                     <td th:text="${blog.type.name}"></td>
                     <td th:text="${blog.recommend}?'是':'否'"></td>
-                    <td th:text="${blog.published}?'草稿中':'已发布'">
+                    <td th:text="${blog.published}?'已发布':'草稿中'">
                     <td th:text="${blog.updateTime}"></td>
                     <td>
-                        <!--<a class="ui mini teal button" th:href="@{/admin/blogs/{id}/edit(id=${blog.id})">编辑</a>
-                        <a class="ui mini red  button" th:href="@{/admin/blogs/{id}/delete(id=${blog.id})}">删除</a>-->
+                        <a href="#" th:href="@{/admin/blogs/{id}/input(id=${blog.id})}" class="ui mini teal basic button">编辑</a>
+                        <a href="#" th:href="@{/admin/blogs/{id}/delete(id=${blog.id})}" class="ui mini red basic button">删除</a>
                     </td>
                 </tr>
                 </tbody>
@@ -129,7 +129,9 @@
         loading();
     };
     $("#clear").on('click',function(){
-
+        $('#type')
+            .dropdown('clear')
+        ;
     })
     function loading(){
         $("#table-container").load(/*[[@{/admin/blogs/search}]]*/"/admin/blogs/search",{

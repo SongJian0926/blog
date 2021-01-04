@@ -3,7 +3,6 @@ package blog.service.impl;
 import blog.dao.TageRepository;
 import blog.entity.Tag;
 import blog.service.TagService;
-import com.google.common.collect.ImmutableList;
 import javassist.NotFoundException;
 import org.springframework.beans.BeanUtils;
 import org.springframework.data.domain.Page;
@@ -12,8 +11,8 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -65,6 +64,10 @@ public class TagServiceImpl implements TagService {
 
     @Override
     public List<Tag> listTage(String tagIds) {
+        if (tagIds.equals("") || tagIds == null) {
+            return tageRepository.findAllById(new ArrayList<>());
+        }
+
         long[] longs = Arrays.stream(tagIds.split(",")).mapToLong(s -> Long.parseLong(s)).toArray();
         List<Long> collect = Arrays.stream(longs).boxed().collect(Collectors.toList());
         return tageRepository.findAllById(collect);
