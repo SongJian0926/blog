@@ -4,11 +4,14 @@ import blog.dao.BlogRepository;
 import blog.entity.Blog;
 import blog.entity.Type;
 import blog.service.BlogService;
+import blog.util.MyBeanUtils;
 import blog.view.BlogQuery;
 import javassist.NotFoundException;
 import org.springframework.beans.BeanUtils;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -71,12 +74,24 @@ public class BlogServiceImpl implements BlogService {
         if (b==null) {
             throw new NotFoundException("该博客不存在");
         }
-        BeanUtils.copyProperties(b,blog);
+        BeanUtils.copyProperties(blog,b, MyBeanUtils.getNullPropertyNames(blog));
         return blogRepository.save(b);
     }
     @Transactional
     @Override
     public void deleteBlog(Long id) {
         blogRepository.deleteById(id);
+    }
+
+    @Override
+    public Page<Blog> listBlog(Pageable pageable) {
+        return blogRepository.findAll(pageable);
+    }
+
+    @Override
+    public List<Blog> listBlogTop(Integer size) {
+        Sort sort = Sort.by(Sort.Direction.DESC,"updateTime");
+        Pageable pageable = PageRequest.of(0,size,sort);
+        return blogRepository.listBolgTop(pageable);
     }
 }

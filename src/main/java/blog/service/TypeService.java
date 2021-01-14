@@ -24,4 +24,6 @@ public interface TypeService {
     Type findByName(String name);
 
     List<Type> listType();
+
+    List<Type> listPageType(Integer size);
 }

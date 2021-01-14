@@ -6,7 +6,9 @@ import blog.service.TagService;
 import javassist.NotFoundException;
 import org.springframework.beans.BeanUtils;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -71,5 +73,12 @@ public class TagServiceImpl implements TagService {
         long[] longs = Arrays.stream(tagIds.split(",")).mapToLong(s -> Long.parseLong(s)).toArray();
         List<Long> collect = Arrays.stream(longs).boxed().collect(Collectors.toList());
         return tageRepository.findAllById(collect);
+    }
+
+    @Override
+    public List<Tag> listPage(Integer size) {
+        Sort sort = Sort.by(Sort.Direction.DESC,"blogs.size");
+        Pageable pageable = PageRequest.of(0,size,sort);
+        return tageRepository.listPage(pageable);
     }
 }

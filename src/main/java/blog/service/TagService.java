@@ -26,4 +26,6 @@ public interface TagService {
     List<Tag> listTage();
 
     List<Tag> listTage(String tagIds);
+
+    List<Tag> listPage(Integer size);
 }

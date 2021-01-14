@@ -81,5 +81,11 @@ public class Blog {
             return tagIds;
         }
     }
-
+    @Override
+    public String toString() {
+        return "blog{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                '}';
+    }
 }

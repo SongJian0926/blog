@@ -26,4 +26,11 @@ public class Type {
     @OneToMany(mappedBy = "type")
     private List<Blog> blogs = new ArrayList<>();
 
+    @Override
+    public String toString() {
+        return "Type{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
